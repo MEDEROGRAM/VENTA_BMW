@@ -158,6 +158,87 @@
             animation: fadeInUp 1s ease-out 0.3s;
             animation-fill-mode: both;
         }
+        
+        /* ---
+        SECCIÓN DE VIDEO CON PORTADA
+        --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.2);
+        }
+
+        .video-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-poster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        
+        .poster-image-blurry {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(4px);
+            transform: scale(1.1); /* Evita bordes duros por el desenfoque */
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+        
+        .play-button svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+        
+        .video-poster:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* ---
         SECCIÓN DE ESPECIFICACIONES
@@ -385,7 +466,7 @@
         <!-- IMAGEN PRINCIPAL -->
         <div class="hero-image-wrapper">
             <!-- FOTO REAL DEL VEHÍCULO -->
-            <img src="https://i.postimg.cc/RVZ5HLMh/Whats-App-Image-2025-08-08-at-6-13-15-PM.png" alt="Vista principal del BMW M440i Convertible" class="hero-image">
+            <img src="https://i.postimg.cc/GhDggbkW/portadaweb-venta-1.png" alt="Vista principal del BMW M440i Convertible" class="hero-image">
         </div>
 
         <!-- DESCRIPCIÓN COMPLETA -->
@@ -393,6 +474,21 @@
             <h2>El Placer de Conducir, Redefinido</h2>
             <p>Vive la combinación perfecta entre adrenalina, elegancia y la libertad de un convertible con este espectacular BMW M440i Cabriolet año 2019. Con solo 37.000 km, esta joya de la ingeniería alemana está en condiciones inmejorables, lista para entregar una experiencia de conducción única.</p>
             <p>Impulsado por el aclamado motor 3.0L TwinPower Turbo de 6 cilindros en línea, este M440i no solo ofrece una potencia que emociona, sino también un andar suave y refinado para el día a día. Su techo duro retráctil te permite disfrutar de la versatilidad de un coupé y la emoción de un descapotable con solo tocar un botón, perfecto para el clima de Chile durante todo el año.</p>
+        </section>
+        
+        <!-- SECCIÓN DE VIDEO -->
+        <section class="content-section">
+            <h2>Magia a Cielo Abierto</h2>
+            <p>Observa en acción la ingeniería de precisión del techo retráctil. En segundos, este BMW se transforma de un elegante coupé a un emocionante convertible, listo para que sientas el viento y el sol. Una experiencia que tienes que ver.</p>
+            <div class="video-container" id="video-container">
+                <div class="video-poster" id="video-poster">
+                    <img src="https://i.postimg.cc/PJGJqFGC/Whats-App-Image-2025-08-08-at-6-13-18-PM.png" class="poster-image-blurry" alt="BMW convertible con el techo abajo">
+                    <div class="play-button">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                    </div>
+                </div>
+                <!-- El iframe se cargará aquí con JavaScript -->
+            </div>
         </section>
 
         <!-- ESPECIFICACIONES -->
@@ -497,6 +593,29 @@
         </footer>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoContainer = document.getElementById('video-container');
+            const videoPoster = document.getElementById('video-poster');
+            
+            // --- VIDEO ID ACTUALIZADO ---
+            const videoId = 'rkL2Ud5qlMQ';
+
+            videoPoster.addEventListener('click', function() {
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+                iframe.setAttribute('title', 'YouTube video player');
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                iframe.setAttribute('allowfullscreen', '');
+                
+                // Reemplaza la portada con el iframe del video
+                videoContainer.innerHTML = ''; // Limpia el contenedor
+                videoContainer.appendChild(iframe);
+            });
+        });
+    </script>
 
 </body>
 </html>
