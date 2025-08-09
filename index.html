@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>En Venta: BMW 420i M Sport Convertible</title>
+    <title>En Venta: BMW M440i Cabriolet 2019</title>
     
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +95,7 @@
         }
 
         h1 {
-            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             text-transform: uppercase;
             text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
             animation: fadeInUp 1s ease-out 0.2s;
@@ -103,6 +103,10 @@
         }
         
         header p {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            max-width: 650px;
+            margin: 1rem auto 0 auto;
             animation: fadeInUp 1s ease-out 0.4s;
             animation-fill-mode: both;
         }
@@ -117,7 +121,7 @@
 
         p {
             font-size: 1.1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: var(--color-text-secondary);
             font-weight: 300;
         }
@@ -235,9 +239,33 @@
             transform: scale(1.05);
             filter: brightness(1.1);
         }
+        
+        /* ---
+        LISTAS DE CARACTERÍSTICAS
+        --- */
+        .features-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+        .features-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+        }
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--color-neon-accent);
+            font-weight: 700;
+        }
 
         /* ---
-        SECCIÓN DE CONTACTO (CORREGIDA)
+        SECCIÓN DE CONTACTO
         --- */
         .contact-section {
             border-radius: 10px;
@@ -266,11 +294,11 @@
             margin-bottom: 1rem;
         }
 
-        @media (min-width: 992px) { /* Ajustado el breakpoint para mejor control */
+        @media (min-width: 992px) {
             .contact-grid {
-                grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); /* Proporción ajustada */
+                grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
                 text-align: left;
-                gap: 3rem; /* Mayor separación */
+                gap: 3rem;
             }
             .contact-text {
                 margin-bottom: 0;
@@ -326,6 +354,18 @@
             width: 24px;
             height: 24px;
         }
+        
+        /* ---
+        FOOTER
+        --- */
+        .site-footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
 
     </style>
 </head>
@@ -338,42 +378,60 @@
             <img src="https://i.postimg.cc/K8LPqZRk/BMW-logo-big-transparent-png.png" alt="Logo de BMW" class="bmw-logo">
             
             <!-- TÍTULO DEL VEHÍCULO -->
-            <h1>BMW 420i M Sport</h1>
-            <p>Silver BMW 4 Series 2.0 420i M Sport Convertible.</p>
+            <h1>M440i Cabriolet 2019</h1>
+            <p>Lujo, Potencia y un Cielo Abierto te Esperan.</p>
         </header>
 
         <!-- IMAGEN PRINCIPAL -->
         <div class="hero-image-wrapper">
             <!-- FOTO REAL DEL VEHÍCULO -->
-            <img src="https://i.postimg.cc/TYBFSqJk/Whats-App-Image-2025-08-08-at-6-13-15-PM.jpg" alt="Vista principal del BMW 420i Convertible" class="hero-image">
+            <img src="https://i.postimg.cc/RVZ5HLMh/Whats-App-Image-2025-08-08-at-6-13-15-PM.png" alt="Vista principal del BMW M440i Convertible" class="hero-image">
         </div>
+
+        <!-- DESCRIPCIÓN COMPLETA -->
+        <section class="content-section">
+            <h2>El Placer de Conducir, Redefinido</h2>
+            <p>Vive la combinación perfecta entre adrenalina, elegancia y la libertad de un convertible con este espectacular BMW M440i Cabriolet año 2019. Con solo 37.000 km, esta joya de la ingeniería alemana está en condiciones inmejorables, lista para entregar una experiencia de conducción única.</p>
+            <p>Impulsado por el aclamado motor 3.0L TwinPower Turbo de 6 cilindros en línea, este M440i no solo ofrece una potencia que emociona, sino también un andar suave y refinado para el día a día. Su techo duro retráctil te permite disfrutar de la versatilidad de un coupé y la emoción de un descapotable con solo tocar un botón, perfecto para el clima de Chile durante todo el año.</p>
+        </section>
 
         <!-- ESPECIFICACIONES -->
         <section class="content-section">
-            <h2>Especificaciones del Vehículo</h2>
+            <h2>Especificaciones Clave</h2>
             <div class="specs-grid">
                 <!-- DATOS REALES DEL VEHÍCULO -->
                 <div class="spec-item">
                     <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
                     <h3>Motor</h3>
-                    <p>2.0L (1.997 L) Petrol</p>
+                    <p>3.0L TwinPower Turbo 6 cilindros en línea.</p>
                 </div>
                 <div class="spec-item">
-                    <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6.75h-9a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6" /></svg>
+                    <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" /></svg>
                     <h3>Transmisión</h3>
-                    <p>Manual</p>
+                    <p>Automática Deportiva Steptronic 8 vel.</p>
                 </div>
                 <div class="spec-item">
                     <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0h18M12 15.75h.008v.008H12v-.008Z" /></svg>
-                    <h3>Año / Millaje</h3>
-                    <p>2015 / 32,000 miles</p>
+                    <h3>Año / Kilometraje</h3>
+                    <p>2019 / 37.000 km</p>
                 </div>
                 <div class="spec-item">
                     <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 0 1 3.375-3.375h9.75a3.375 3.375 0 0 1 3.375 3.375v1.875" /></svg>
                     <h3>Carrocería</h3>
-                    <p>Convertible / 2 Puertas</p>
+                    <p>Convertible / Hard Top</p>
                 </div>
             </div>
+        </section>
+        
+        <!-- CARACTERÍSTICAS DESTACADAS -->
+        <section class="content-section">
+            <h2>Características Principales</h2>
+            <ul class="features-list">
+                <li><b>Paquete M Sport:</b> Incluye suspensión deportiva adaptativa M, frenos deportivos M, paquete aerodinámico M y volante M de cuero.</li>
+                <li><b>Interior de Lujo:</b> Asientos deportivos de cuero negro con ajuste eléctrico y memoria, con finas terminaciones en aluminio y detalles en azul Estoril.</li>
+                <li><b>Tecnología iDrive:</b> Sistema de infoentretenimiento con pantalla de alta resolución, GPS y Apple CarPlay.</li>
+                <li><b>Modos de Conducción:</b> Selecciona entre Sport+, Sport, Comfort y Eco Pro para adaptar el coche a tu estilo.</li>
+            </ul>
         </section>
         
         <!-- GALERÍA SECUNDARIA AMPLIADA -->
@@ -382,30 +440,34 @@
             <div class="gallery-grid">
                 <!-- FOTOS REALES DEL VEHÍCULO -->
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/zBDcWdqf/Whats-App-Image-2025-08-08-at-6-13-15-PM-1.jpg" alt="Vista lateral del vehículo">
+                    <img src="https://i.postimg.cc/65WwhNh9/Whats-App-Image-2025-08-08-at-6-13-15-PM-1.png" alt="Vista lateral del vehículo">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/cCphDTGw/Whats-App-Image-2025-08-08-at-6-13-10-PM.jpg" alt="Vista frontal del vehículo">
+                    <img src="https://i.postimg.cc/ht3Sj3TK/Whats-App-Image-2025-08-08-at-6-13-10-PM.png" alt="Vista frontal del vehículo">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/zfzsSDj5/Whats-App-Image-2025-08-08-at-6-13-18-PM.jpg" alt="Vista trasera del vehículo">
+                    <img src="https://i.postimg.cc/PJGJqFGC/Whats-App-Image-2025-08-08-at-6-13-18-PM.png" alt="Vista trasera del vehículo">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/B6tRkhkV/Whats-App-Image-2025-08-08-at-6-13-17-PM.jpg" alt="Detalle de la rueda">
+                    <img src="https://i.postimg.cc/QxGKNVsf/Whats-App-Image-2025-08-08-at-6-13-17-PM.png" alt="Detalle de la rueda">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/1Xj2yph3/Whats-App-Image-2025-08-08-at-6-13-16-PM.jpg" alt="Detalle del interior y dashboard">
+                    <img src="https://i.postimg.cc/9MP5GxRR/Whats-App-Image-2025-08-08-at-6-13-16-PM.png" alt="Detalle del interior y dashboard">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/NfRS32CB/Whats-App-Image-2025-08-08-at-6-13-16-PM-3.jpg" alt="Detalle de los asientos">
+                    <img src="https://i.postimg.cc/Y2Vjn0hp/Whats-App-Image-2025-08-08-at-6-13-16-PM-1.png" alt="Detalle del volante">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://i.postimg.cc/26qX21Bp/Whats-App-Image-2025-08-08-at-6-13-16-PM-1.jpg" alt="Detalle del volante">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://i.postimg.cc/8CzYfKpz/Whats-App-Image-2025-08-08-at-6-13-16-PM-2.jpg" alt="Detalle de la palanca de cambios">
+                    <img src="https://i.postimg.cc/8PMWLMt8/Whats-App-Image-2025-08-08-at-6-13-16-PM-2.png" alt="Detalle de la palanca de cambios">
                 </div>
             </div>
+        </section>
+
+        <!-- CONDICIÓN DEL VEHÍCULO -->
+        <section class="content-section">
+            <h2>Condición del Vehículo</h2>
+            <p>Vehículo en estado impecable, cuidado de forma maniática y guardado siempre bajo techo. Todas sus mantenciones se encuentran rigurosamente al día. Sin detalles estéticos ni mecánicos, listo para ser disfrutado por su próximo dueño. Documentación completamente al día, sin multas ni partes de ningún tipo.</p>
+            <p style="margin-top: 1rem;"><b>Motivo de Venta:</b> Se vende solo por renovación. Es una oportunidad única de adquirir un deportivo de alta gama que combina performance, confort y un diseño que roba miradas.</p>
         </section>
 
         <!-- CONTACTO -->
@@ -417,7 +479,7 @@
                 </div>
                 <div class="contact-actions">
                     <!-- DATOS DE CONTACTO ACTUALIZADOS -->
-                    <a href="https://wa.me/56965918611?text=Hola,%20estoy%20interesado%20en%20el%20BMW%20420i." class="contact-button whatsapp" target="_blank">
+                    <a href="https://wa.me/56965918611?text=Hola,%20estoy%20interesado%20en%20el%20BMW%20M440i." class="contact-button whatsapp" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 14.2c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.3-.4.1-.2.1-.3 0-.4-.1-.1-.6-1.5-.8-2.1-.2-.5-.4-.5-.5-.5h-.5c-.2 0-.4.1-.6.3-.2.2-.8.7-1 1.5-.2.8-.2 1.6 0 2.3.2.7.9 1.6 1.8 2.5 1.5 1.5 2.8 2.2 4.3 2.8.4.2.8.3 1.1.3.5.1 1.2-.1 1.6-.5.4-.4.7-.9.9-1.3.2-.4.1-.8 0-.9l-1.4-.6zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18.2c-4.5 0-8.2-3.7-8.2-8.2S7.5 3.8 12 3.8s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/></svg>
                         <span>WhatsApp</span>
                     </a>
@@ -428,6 +490,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer class="site-footer">
+            <p>© 2024 Richard Antich. Todos los derechos reservados.</p>
+        </footer>
 
     </div>
 
