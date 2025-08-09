@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Venta: BMW 420i M Sport Convertible</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ---
+        DIRECCIÓN DE ARTE: FUSIÓN MINIMALISTA-TECNOLÓGICO
+        Variables para una fácil personalización.
+        --- */
+        :root {
+            --color-background-start: #2a2a2e;
+            --color-background-end: #1a1a1a;
+            --color-neon-accent: #00aaff;
+            --color-text-primary: #e5e5e5;
+            --color-text-secondary: #a0a0a0;
+            --font-primary: 'Poppins', sans-serif;
+            --transition-speed: 0.4s;
+        }
+
+        /* ---
+        ANIMACIONES
+        --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 170, 255, 0.3), 0 0 20px rgba(0, 170, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(0, 170, 255, 0.7), 0 0 40px rgba(0, 170, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(0, 170, 255, 0.3), 0 0 20px rgba(0, 170, 255, 0.2);
+            }
+        }
+
+        /* ---
+        BASE Y ATMÓSFERA
+        --- */
+        body {
+            font-family: var(--font-primary);
+            background: radial-gradient(circle at top center, var(--color-background-start), var(--color-background-end));
+            background-attachment: fixed;
+            color: var(--color-text-primary);
+            margin: 0;
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        /* ---
+        HEADER CON LOGO
+        --- */
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .bmw-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem auto;
+            animation: fadeInUp 0.8s ease-out;
+            object-fit: contain;
+        }
+
+        /* ---
+        TIPOGRAFÍA
+        --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+            animation: fadeInUp 1s ease-out 0.2s;
+            animation-fill-mode: both;
+        }
+        
+        header p {
+            animation: fadeInUp 1s ease-out 0.4s;
+            animation-fill-mode: both;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            color: var(--color-neon-accent);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+            font-weight: 300;
+        }
+        
+        /* ---
+        IMAGEN HERO
+        --- */
+        .hero-image-wrapper {
+            padding: 10px;
+            margin: 3rem 0 5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 170, 255, 0.2), 0 0 30px rgba(0, 170, 255, 0.2);
+            transition: box-shadow var(--transition-speed) ease, transform var(--transition-speed) ease;
+            animation: fadeInUp 1s ease-out 0.6s;
+            animation-fill-mode: both;
+        }
+        
+        .hero-image-wrapper:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.5), 0 0 40px rgba(0, 170, 255, 0.4);
+        }
+
+        .hero-image {
+            width: 100%;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* ---
+        SECCIONES DE CONTENIDO
+        --- */
+        .content-section {
+            margin-bottom: 5rem;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: both;
+        }
+
+        /* ---
+        SECCIÓN DE ESPECIFICACIONES
+        --- */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .spec-item {
+            background: rgba(30, 30, 30, 0.5);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .spec-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-neon-accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .spec-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.5rem auto;
+            color: var(--color-neon-accent);
+        }
+
+        .spec-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ---
+        GALERÍA SECUNDARIA
+        --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 5px;
+            border: 1px solid #333;
+            transition: border-color var(--transition-speed) ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.6s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.8s; }
+        .gallery-item:nth-child(6) { animation-delay: 1.0s; }
+        .gallery-item:nth-child(7) { animation-delay: 1.2s; }
+        .gallery-item:nth-child(8) { animation-delay: 1.4s; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform var(--transition-speed) ease, filter var(--transition-speed) ease;
+        }
+        
+        .gallery-item:hover {
+            border-color: var(--color-neon-accent);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* ---
+        SECCIÓN DE CONTACTO (CORREGIDA)
+        --- */
+        .contact-section {
+            border-radius: 10px;
+            border-top: 1px solid rgba(0, 170, 255, 0.2);
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: both;
+            overflow: hidden;
+            position: relative;
+            padding: 4rem 2rem;
+            background-color: #222;
+            background-image: 
+                linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1)), 
+                linear-gradient(-45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.1) 75%, rgba(0,0,0,0.1));
+            background-size: 20px 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .contact-text {
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 992px) { /* Ajustado el breakpoint para mejor control */
+            .contact-grid {
+                grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); /* Proporción ajustada */
+                text-align: left;
+                gap: 3rem; /* Mayor separación */
+            }
+            .contact-text {
+                margin-bottom: 0;
+            }
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 992px) {
+             .contact-actions {
+                align-items: flex-end;
+            }
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: var(--color-neon-accent);
+            border: 2px solid var(--color-neon-accent);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+            width: 100%;
+            max-width: 320px;
+            justify-content: center;
+        }
+        
+        .contact-button.whatsapp {
+            animation: pulse 2.5s infinite;
+        }
+
+        .contact-button:hover {
+            background: var(--color-neon-accent);
+            color: #111;
+            box-shadow: 0 0 25px rgba(0, 170, 255, 0.7);
+            transform: translateY(-3px);
+        }
+
+        .contact-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <!-- LOGO DE BMW -->
+            <img src="https://i.postimg.cc/K8LPqZRk/BMW-logo-big-transparent-png.png" alt="Logo de BMW" class="bmw-logo">
+            
+            <!-- TÍTULO DEL VEHÍCULO -->
+            <h1>BMW 420i M Sport</h1>
+            <p>Silver BMW 4 Series 2.0 420i M Sport Convertible.</p>
+        </header>
+
+        <!-- IMAGEN PRINCIPAL -->
+        <div class="hero-image-wrapper">
+            <!-- FOTO REAL DEL VEHÍCULO -->
+            <img src="https://i.postimg.cc/TYBFSqJk/Whats-App-Image-2025-08-08-at-6-13-15-PM.jpg" alt="Vista principal del BMW 420i Convertible" class="hero-image">
+        </div>
+
+        <!-- ESPECIFICACIONES -->
+        <section class="content-section">
+            <h2>Especificaciones del Vehículo</h2>
+            <div class="specs-grid">
+                <!-- DATOS REALES DEL VEHÍCULO -->
+                <div class="spec-item">
+                    <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+                    <h3>Motor</h3>
+                    <p>2.0L (1.997 L) Petrol</p>
+                </div>
+                <div class="spec-item">
+                    <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6.75h-9a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6" /></svg>
+                    <h3>Transmisión</h3>
+                    <p>Manual</p>
+                </div>
+                <div class="spec-item">
+                    <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0h18M12 15.75h.008v.008H12v-.008Z" /></svg>
+                    <h3>Año / Millaje</h3>
+                    <p>2015 / 32,000 miles</p>
+                </div>
+                <div class="spec-item">
+                    <svg class="spec-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.125-.504 1.125-1.125V14.25m-17.25 4.5v-1.875a3.375 3.375 0 0 1 3.375-3.375h9.75a3.375 3.375 0 0 1 3.375 3.375v1.875" /></svg>
+                    <h3>Carrocería</h3>
+                    <p>Convertible / 2 Puertas</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- GALERÍA SECUNDARIA AMPLIADA -->
+        <section class="content-section">
+            <h2>Galería de Detalles</h2>
+            <div class="gallery-grid">
+                <!-- FOTOS REALES DEL VEHÍCULO -->
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/zBDcWdqf/Whats-App-Image-2025-08-08-at-6-13-15-PM-1.jpg" alt="Vista lateral del vehículo">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/cCphDTGw/Whats-App-Image-2025-08-08-at-6-13-10-PM.jpg" alt="Vista frontal del vehículo">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/zfzsSDj5/Whats-App-Image-2025-08-08-at-6-13-18-PM.jpg" alt="Vista trasera del vehículo">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/B6tRkhkV/Whats-App-Image-2025-08-08-at-6-13-17-PM.jpg" alt="Detalle de la rueda">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/1Xj2yph3/Whats-App-Image-2025-08-08-at-6-13-16-PM.jpg" alt="Detalle del interior y dashboard">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/NfRS32CB/Whats-App-Image-2025-08-08-at-6-13-16-PM-3.jpg" alt="Detalle de los asientos">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/26qX21Bp/Whats-App-Image-2025-08-08-at-6-13-16-PM-1.jpg" alt="Detalle del volante">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.postimg.cc/8CzYfKpz/Whats-App-Image-2025-08-08-at-6-13-16-PM-2.jpg" alt="Detalle de la palanca de cambios">
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-text">
+                    <h2 style="border: none; margin-bottom: 1rem;">Toma el Volante</h2>
+                    <p>El placer de conducir está a tu alcance. Contáctame para coordinar una prueba de manejo y sentir la potencia de este convertible.</p>
+                </div>
+                <div class="contact-actions">
+                    <!-- DATOS DE CONTACTO ACTUALIZADOS -->
+                    <a href="https://wa.me/56965918611?text=Hola,%20estoy%20interesado%20en%20el%20BMW%20420i." class="contact-button whatsapp" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 14.2c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.5-1.5-1.8-.1-.2 0-.4.1-.5l.4-.5c.1-.1.2-.3.3-.4.1-.2.1-.3 0-.4-.1-.1-.6-1.5-.8-2.1-.2-.5-.4-.5-.5-.5h-.5c-.2 0-.4.1-.6.3-.2.2-.8.7-1 1.5-.2.8-.2 1.6 0 2.3.2.7.9 1.6 1.8 2.5 1.5 1.5 2.8 2.2 4.3 2.8.4.2.8.3 1.1.3.5.1 1.2-.1 1.6-.5.4-.4.7-.9.9-1.3.2-.4.1-.8 0-.9l-1.4-.6zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18.2c-4.5 0-8.2-3.7-8.2-8.2S7.5 3.8 12 3.8s8.2 3.7 8.2 8.2-3.7 8.2-8.2 8.2z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="mailto:antichrichard@gmail.com" class="contact-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4.7-8 5.3-8-5.3V6.7l8 5.3 8-5.3v2.7z"/></svg>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
